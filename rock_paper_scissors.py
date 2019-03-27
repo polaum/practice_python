@@ -9,7 +9,8 @@ class SameChoiceException(Exception):
 
 def choose_winner(my_choice):
     winner = ''
-    cmp_choice = random.randint(1, len(options))
+    cmp_choice = int(random.randint(1, len(options)))
+    print(cmp_choice)
     if my_choice == cmp_choice:
         raise SameChoiceException("It's a Tie!")
     elif my_choice == 1 and cmp_choice == 2:
@@ -24,8 +25,7 @@ def choose_winner(my_choice):
         winner = 'Computer'
     elif my_choice == 3 and cmp_choice == 2:
         winner = 'You'
-    else:
-        return winner
+    return winner
 
 
 def play():
